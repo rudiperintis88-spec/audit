@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Temuan Audit SPK DO – Jan–Sep 2026</title><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fafaf7;--fg:#1d1d1b;--mut:#6b6b64;--card:#fff;--bd:#e3e2db;--ac:#1f3a5f;--hl:#eef3f9}
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Temuan Audit SPK DO – Jan–Sep 2026</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#fafaf7;--fg:#1d1d1b;--mut:#6b6b64;--card:#fff;--bd:#e3e2db;--ac:#1f3a5f;--hl:#eef3f9}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#171716;--fg:#ecebe5;--mut:#a3a29a;--card:#212120;--bd:#34342f;--ac:#7fa8dc;--hl:#26303d}}
 :root[data-theme="dark"]{--bg:#171716;--fg:#ecebe5;--mut:#a3a29a;--card:#212120;--bd:#34342f;--ac:#7fa8dc;--hl:#26303d}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -20,7 +20,34 @@ td.n,th.n{text-align:right;white-space:nowrap}tbody tr:hover{background:var(--hl
 .fb button:hover,.bar button:hover,.tabs button:hover{background:var(--hl)}
 .fb select:focus-visible,.fb input:focus-visible,.fb button:focus-visible,.tabs button:focus-visible,#mf button:focus-visible,th.st:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 .fh{margin:14px 0 0;font-size:1rem}
-</style></head><body><main><h1>Temuan Audit SPK DO</h1><div class="sub">Hanya temuan yang bermasalah · satu baris per transaksi, kategori dipisah per kolom keterangan (SPK, BAST, TT, Transfer)</div><div class="bar"><button id="rf" type="button">⟳ Refresh manual</button><label><input type="checkbox" id="lv"> Refresh live, tiap <select id="iv"><option value="30">30 detik</option><option value="60" selected>1 menit</option><option value="300">5 menit</option></select></label><span id="st" class="sub"></span></div><details class="sx"><summary class="sub">Sumber data (Google Sheets)</summary><input id="src" value="https://docs.google.com/spreadsheets/d/1S1YqvR_4Nx3Vn3dC3eK-u9jwPi6l2ozbeUi2Sl-HFH4/edit"><div class="sub">Ambil tab Gatsu, Flamboyan, dan Gagak Hitam. Boleh diganti dengan ID/URL spreadsheet lain.</div></details><h2 class="fh">Saring temuan</h2><div class="fb" id="fb"><div><label for="fc">Cabang</label><select id="fc"><option value="">Semua cabang</option><option value="0">Gatsu</option><option value="1">Flamboyan</option><option value="2">Gagak Hitam</option></select></div><div><label for="ff">Jenis temuan</label><select id="ff"><option value="">Semua temuan</option></select></div><div><label for="fm">Bulan</label><select id="fm"><option value="">Semua bulan</option></select></div><div><label for="fq">Cari</label><input id="fq" type="search" placeholder="Nama, sales, faktur, catatan"></div><div><button type="button" id="fr">Reset saringan</button></div></div><div id="mf"></div><div id="app"></div></main><script>(function(){
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;gap:16px 28px;flex-wrap:wrap;padding:26px 24px 20px;margin:-20px -14px 14px;border-bottom:1px solid var(--bd);background:linear-gradient(100deg,transparent 45%,var(--tint))}
+:root{--tint:rgba(232,196,190,.28);--ok:#2f9e6b;--bad2:#b3261e}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--tint:rgba(120,80,76,.22);--ok:#4cc38a;--bad2:#f0766c}}
+:root[data-theme="dark"]{--tint:rgba(120,80,76,.22);--ok:#4cc38a;--bad2:#f0766c}
+.co{color:var(--mut);font-size:1rem;margin-bottom:6px}
+.hd h1{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;font-size:clamp(2rem,4.4vw,2.9rem);line-height:1.08;letter-spacing:-.015em;margin:0 0 8px}
+.pr{color:var(--mut);font-size:1rem;opacity:.85}
+.hr{display:flex;flex-direction:column;align-items:flex-end;gap:12px;padding-top:30px;max-width:100%}
+.sy{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+.live{display:inline-flex;align-items:center;gap:8px;font:inherit;font-size:.98rem;color:var(--mut);background:none;border:0;padding:6px 4px;cursor:pointer;border-radius:8px;text-align:left}
+.live b{color:var(--fg);font-weight:600}
+.live.ok .lv-dot{color:var(--ok);font-weight:600}
+.live.err{color:var(--bad2)}
+.live.off{opacity:.8}
+.live:hover{background:var(--hl)}
+.rfb{display:inline-flex;align-items:center;gap:10px;font:inherit;font-size:1rem;font-weight:500;color:var(--fg);background:var(--hl);border:1px solid var(--bd);border-radius:10px;padding:9px 18px;cursor:pointer}
+.rfb:hover{filter:brightness(.97)}
+.rfb:disabled{opacity:.6;cursor:progress}
+.ic{width:20px;height:20px;flex:none}
+.spin .ic{animation:sp 1s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.spin .ic{animation:none}}
+.sr{color:var(--mut);font-size:1rem}
+.sh{color:var(--bad2);font-size:.85rem;max-width:520px;text-align:right}
+.live:focus-visible,.rfb:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+@media(max-width:700px){.hr{align-items:flex-start;padding-top:0}.sy{justify-content:flex-start}.sh{text-align:left}}
+</style></head><body><main><header class="hd"><div><div class="co">PT Perintis Perkasa, Medan</div><h1>Temuan Audit SPK DO</h1><div class="pr" id="pr">Periode : Januari – September 2026</div></div><div class="hr"><div class="sy"><button type="button" id="lv" class="live" aria-pressed="true" title="Klik untuk menyalakan atau mematikan sinkron otomatis"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="st">Data awal · belum disinkron</span></button><button type="button" id="rf" class="rfb"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Refresh</button></div><div class="sr" id="sr">Sumber: Laporan Audit SPK DO</div><div class="sh" id="sh" hidden></div></div></header><div class="sub">Hanya temuan yang bermasalah · satu baris per transaksi, kategori dipisah per kolom keterangan (SPK, BAST, TT, Transfer)</div><details class="sx"><summary class="sub">Ubah sumber data (Google Sheets)</summary><input id="src" value="https://docs.google.com/spreadsheets/d/1S1YqvR_4Nx3Vn3dC3eK-u9jwPi6l2ozbeUi2Sl-HFH4/edit"><div class="sub">Mengambil tab Gatsu, Flamboyan, dan Gagak Hitam. Boleh diganti dengan ID atau URL spreadsheet lain.</div></details><h2 class="fh">Saring temuan</h2><div class="fb" id="fb"><div><label for="fc">Cabang</label><select id="fc"><option value="">Semua cabang</option><option value="0">Gatsu</option><option value="1">Flamboyan</option><option value="2">Gagak Hitam</option></select></div><div><label for="ff">Jenis temuan</label><select id="ff"><option value="">Semua temuan</option></select></div><div><label for="fm">Bulan</label><select id="fm"><option value="">Semua bulan</option></select></div><div><label for="fq">Cari</label><input id="fq" type="search" placeholder="Nama, sales, faktur, catatan"></div><div><button type="button" id="fr">Reset saringan</button></div></div><div id="mf"></div><div id="app"></div></main><script>(function(){
 function key(t){t=t.trim();if(!t)return null;var m=t.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);if(m)return +(m[3]+m[2]+m[1]);
 if(/^-?\d{1,3}(\.\d{3})+(,\d+)?%?$/.test(t))return parseFloat(t.replace(/\./g,'').replace(',','.'));
 if(/^-?\d+(,\d+)?%?$/.test(t))return parseFloat(t.replace(',','.'));if(/^-?\d+\.\d+%?$/.test(t))return parseFloat(t);return t.toLowerCase()}
@@ -146,14 +173,32 @@ function num(x){var s=String(x||'').replace(/[^\d.,-]/g,'');if(/^-?\d+\.\d{1,2}$
 function dt(x){x=String(x||'').trim();var m=x.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);if(m)return ('0'+m[1]).slice(-2)+'/'+('0'+m[2]).slice(-2)+'/'+m[3];m=x.match(/^(\d{4})-(\d{2})-(\d{2})/);return m?m[3]+'/'+m[2]+'/'+m[1]:''}
 function parse(t){var R=csv(t),out=[];for(var i=1;i<R.length;i++){var r=R[i],d=dt(r[1]);if(!d)continue;function s(j){return String(r[j]==null?'':r[j]).trim()}
 var o=[d,s(2),s(3),s(4),num(r[12]),s(14),s(15),s(16),s(17),s(18),s(19),s(21),s(22),s(23),s(24)];if(o[11]||o[12]||o[13]||o[14]||o[10]==='SPK Fisik Hilang')out.push(o)}return out}
-function setSt(m,bad){stEl.textContent=m;stEl.style.color=bad?'#b3261e':''}
-function refresh(){var src=document.getElementById('src').value.trim(),mm=src.match(/\/d\/([\w-]+)/),id=mm?mm[1]:src;setSt('Mengambil data dari Google Sheets…');
+var isLive=true,cur=['init'],busy=false,ICO=document.getElementById('lv').querySelector('.ic').outerHTML;
+function pad(n){return ('0'+n).slice(-2)}
+function fdt(d){return d.getDate()+' '+FULL[d.getMonth()]+' '+d.getFullYear()+', '+pad(d.getHours())+':'+pad(d.getMinutes())}
+function setSt(m,a){cur=[m,a];status()}
+function status(){var m=cur[0],a=cur[1],chip=document.getElementById('lv'),sh=document.getElementById('sh'),rb=document.getElementById('rf'),h,cls=m;
+var auto=isLive?' · otomatis tiap 2 menit':' · otomatis nonaktif (klik untuk aktifkan)';
+if(m==='load')h='Menyinkronkan…';
+else if(m==='ok')h=(isLive?'<span class="lv-dot">Live</span> · tersinkron ':'Tersinkron ')+'<b>'+E(fdt(a))+'</b>'+auto;
+else if(m==='err')h='Gagal tersinkron · data sebelumnya tetap ditampilkan'+auto;
+else h='Data awal · belum disinkron'+auto;
+chip.className='live '+cls+(isLive?'':' off');chip.setAttribute('aria-pressed',isLive);
+document.getElementById('st').innerHTML=h;
+sh.hidden=m!=='err';sh.textContent=m==='err'?(a+'. Pastikan spreadsheet dibagikan “siapa saja yang memiliki link”.'):'';
+rb.disabled=m==='load';document.querySelectorAll('#lv,#rf').forEach(function(x){x.classList.toggle('spin',m==='load')})}
+function updHead(ms){var k=Object.keys(ms).sort(function(a,b){return a-b}),yr='';
+for(var i=0;i<RAW.length&&!yr;i++)if(RAW[i].length)yr=RAW[i][0][0].slice(6);
+if(k.length)document.getElementById('pr').textContent='Periode : '+FULL[k[0]-1]+(k.length>1?' – '+FULL[k[k.length-1]-1]:'')+' '+yr;
+var n=0;['belum','clear'].forEach(function(t){A[t].forEach(function(a){n+=a.length})});
+document.getElementById('sr').textContent='Sumber: Laporan Audit SPK DO ('+n+' transaksi bermasalah)'}
+function refresh(){if(typeof fetch!=='function'){setSt('err','Browser tidak mendukung fetch');return}var src=document.getElementById('src').value.trim(),mm=src.match(/\/d\/([\w-]+)/),id=mm?mm[1]:src;setSt('load');
 Promise.all(DIV.map(function(n){var u=src.indexOf('{sheet}')>-1?src.replace('{sheet}',encodeURIComponent(n)):'https://docs.google.com/spreadsheets/d/'+id+'/gviz/tq?tqx=out:csv&sheet='+encodeURIComponent(n);
 return fetch(u,{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status+' ('+n+')');return r.text()}).then(parse)}))
-.then(function(res){RAW=res;render();var d=new Date();setSt('Diperbarui '+d.toLocaleTimeString('id-ID')+' · '+res.map(function(x,i){return DIV[i]+' '+x.length+' baris bercatatan'}).join(', '))})
-.catch(function(e){setSt('Gagal refresh: '+e.message+'. Data sebelumnya tetap ditampilkan. Pastikan spreadsheet dibagikan “siapa saja yang memiliki link”.',1)})}
-var tm=null;function live(){clearInterval(tm);tm=null;if(document.getElementById('lv').checked){refresh();tm=setInterval(refresh,+document.getElementById('iv').value*1000)}}
-document.getElementById('rf').addEventListener('click',refresh);document.getElementById('lv').addEventListener('change',live);document.getElementById('iv').addEventListener('change',function(){if(tm)live()});
+.then(function(res){var same=JSON.stringify(res)===JSON.stringify(RAW);RAW=res;if(!same)render();setSt('ok',new Date())})
+.catch(function(e){setSt('err',e.message)})}
+var tm=null;function live(){clearInterval(tm);tm=null;if(isLive){refresh();tm=setInterval(refresh,120000)}else status()}
+document.getElementById('rf').addEventListener('click',refresh);document.getElementById('lv').addEventListener('click',function(){isLive=!isLive;live()});
 function syncBar(ms){
 var ff=document.getElementById('ff'),fm=document.getElementById('fm'),seen={};
 ['belum','clear'].forEach(function(k){A[k].forEach(function(a){a.forEach(function(f){[0,2,4,7].forEach(function(x){if(f.c[x])seen[f.c[x]]=1})})})});
@@ -164,12 +209,12 @@ var keys=Object.keys(ms).sort(function(a,b){return a-b}),on=keys.filter(function
 var extra=on.length===keys.length||on.length===1?'':'<option value="x">'+(on.length?'Beberapa bulan (sesuai tombol)':'Tidak ada bulan dipilih')+'</option>';
 fm.innerHTML='<option value="">Semua bulan</option>'+keys.map(function(m){return '<option value="'+m+'">'+FULL[m-1]+'</option>'}).join('')+extra;
 fm.value=on.length===keys.length?'':(on.length===1?on[0]:'x');
-document.getElementById('fc').value=F.cab}
+document.getElementById('fc').value=F.cab;updHead(ms)}
 document.getElementById('fc').addEventListener('change',function(e){F.cab=e.target.value;if(F.cab!==''){ui.sub.belum=+F.cab;ui.sub.clear=+F.cab}render()});
 document.getElementById('ff').addEventListener('change',function(e){F.jenis=e.target.value;render()});
 document.getElementById('fm').addEventListener('change',function(e){var v=e.target.value;if(v==='x')return;Object.keys(ui.months).forEach(function(m){ui.months[m]=(v===''||m===v)});render()});
 var qt=null;document.getElementById('fq').addEventListener('input',function(e){var v=e.target.value.trim().toLowerCase();clearTimeout(qt);qt=setTimeout(function(){F.q=v;render()},200)});
 document.getElementById('fr').addEventListener('click',function(){F.cab='';F.jenis='';F.q='';document.getElementById('fq').value='';Object.keys(ui.months).forEach(function(m){ui.months[m]=true});render()});
-render();setSt('Data awal dari file Excel (belum di-refresh).');
+render();setSt('init');live();
 })();</script>
 </body></html>
