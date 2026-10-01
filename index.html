@@ -35,7 +35,7 @@ table.rt td{min-width:0}
 .chips button:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
 #sr a{color:inherit;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--bd)}#sr a:hover{color:var(--ac)}
 .fb select,.fb input,.fb button{height:42px;box-sizing:border-box}
-@media(min-width:900px){.fb{grid-template-columns:1fr 1.5fr .8fr 1fr 1.6fr auto}}
+@media(min-width:900px){.fb{grid-template-columns:1fr 1.5fr .8fr 1fr auto;max-width:980px}}
 body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
 .hd{display:flex;justify-content:space-between;align-items:flex-start;gap:16px 28px;flex-wrap:wrap;padding:26px 24px 20px;margin:-20px -14px 14px;border-bottom:1px solid var(--bd);background:linear-gradient(100deg,transparent 45%,var(--tint))}
 :root{--tint:rgba(232,196,190,.28);--ok:#2f9e6b;--bad2:#b3261e}
@@ -85,7 +85,25 @@ body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
 .sh3{font:600 1.2rem/1.3 "Fraunces",Georgia,serif;margin:26px 0 2px}
 #app>section{margin-top:0}
 @media(max-width:700px){.tabs button{flex:0 0 auto;min-width:128px}}
-</style></head><body><main><header class="hd"><div><div class="co">PT Perintis Perkasa, Medan</div><h1>Temuan Audit SPK DO</h1><div class="pr" id="pr">Periode : Januari – September 2026</div></div><div class="hr"><div class="sy"><button type="button" id="lv" class="live" aria-pressed="true" title="Klik untuk menyalakan atau mematikan sinkron otomatis"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="st">Data awal · belum disinkron</span></button><button type="button" id="rf" class="rfb"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Refresh</button></div><div class="sr" id="sr">Sumber: Laporan Audit SPK DO</div><div class="sh" id="sh" hidden></div></div></header><h2 class="fh">Saring temuan</h2><div class="fb" id="fb"><div><label for="fc">Cabang</label><select id="fc"><option value="">Semua cabang</option><option value="0">Gatsu</option><option value="1">Flamboyan</option><option value="2">Gagak Hitam</option></select></div><div><label for="ff">Jenis temuan</label><select id="ff"><option value="">Semua temuan</option></select></div><div><label for="fy">Tahun</label><select id="fy"><option value="">Semua tahun</option></select></div><div><label for="fm">Bulan</label><select id="fm"><option value="">Semua bulan</option></select></div><div><label for="fq">Cari</label><input id="fq" type="search" placeholder="Nama, sales, faktur, catatan"></div><div><button type="button" id="fr">Reset saringan</button></div></div><div id="mf"></div><div id="app"></div></main><script>(function(){
+
+.tabs{overflow:visible;border-bottom:0;box-shadow:inset 0 -1px 0 var(--bd)}
+.tabs button{margin:0;min-width:0;padding:13px 10px 11px;overflow-wrap:anywhere}
+.tabs.sub2{box-shadow:none;flex-wrap:wrap}
+.tb{display:flex;justify-content:space-between;align-items:flex-end;gap:6px 20px;flex-wrap:wrap;margin:8px 0 8px;box-shadow:inset 0 -1px 0 var(--bd)}
+.tb .tabs.sub2{margin:0;box-shadow:none}
+.qw{display:flex;align-items:center;gap:10px;padding-bottom:7px;margin-left:auto}
+input.qs{font:inherit;font-size:.93rem;width:min(340px,70vw);height:38px;box-sizing:border-box;padding:7px 11px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--fg)}
+input.qs:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.qw .cn{min-width:68px}
+@media(max-width:700px){
+ .tabs{flex-wrap:nowrap}
+ .tabs button{flex:1 1 0;min-width:0;padding:10px 3px 8px;font-size:.76rem;line-height:1.25}
+ .tabs button .tc{font-size:.66rem}
+ .tabs.sub2{flex-wrap:wrap}
+ .tabs.sub2 button{flex:0 0 auto;padding:9px 12px 8px;font-size:.88rem}
+ .qw{width:100%;margin-left:0}input.qs{width:100%}
+}
+</style></head><body><main><header class="hd"><div><div class="co">PT Perintis Perkasa, Medan</div><h1>Temuan Audit SPK DO</h1><div class="pr" id="pr">Periode : Januari – September 2026</div></div><div class="hr"><div class="sy"><button type="button" id="lv" class="live" aria-pressed="true" title="Klik untuk menyalakan atau mematikan sinkron otomatis"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="st">Data awal · belum disinkron</span></button><button type="button" id="rf" class="rfb"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Refresh</button></div><div class="sr" id="sr">Sumber: Laporan Audit SPK DO</div><div class="sh" id="sh" hidden></div></div></header><div class="fb" id="fb"><div><label for="fc">Cabang</label><select id="fc"><option value="">Semua cabang</option><option value="0">Gatsu</option><option value="1">Flamboyan</option><option value="2">Gagak Hitam</option></select></div><div><label for="ff">Jenis temuan</label><select id="ff"><option value="">Semua temuan</option></select></div><div><label for="fy">Tahun</label><select id="fy"><option value="">Semua tahun</option></select></div><div><label for="fm">Bulan</label><select id="fm"><option value="">Semua bulan</option></select></div><div><button type="button" id="fr">Reset saringan</button></div></div><div id="mf"></div><div id="app"></div></main><script>(function(){
 function key(t){t=t.trim();if(!t)return null;var m=t.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);if(m)return +(m[3]+m[2]+m[1]);
 if(/^-?\d{1,3}(\.\d{3})+(,\d+)?%?$/.test(t))return parseFloat(t.replace(/\./g,'').replace(',','.'));
 if(/^-?\d+(,\d+)?%?$/.test(t))return parseFloat(t.replace(',','.'));if(/^-?\d+\.\d+%?$/.test(t))return parseFloat(t);return t.toLowerCase()}
@@ -124,7 +142,7 @@ var DIV=['Gatsu','Flamboyan','Gagak Hitam'],MN=['Jan','Feb','Mar','Apr','Mei','J
 var CATS=['Unit belum keluar showroom / belum diserahkan','Foto serah terima bukan pemesan','TT sementara / SPK kecil tidak dikembalikan','Transfer tanpa KTP penyetor (BRI Link dkk.)','Transfer / SP Transfer bermasalah (di SPK)','Transfer / SP Transfer bermasalah (di TT)','SPK fisik hilang','Tanda tangan BAST tidak sesuai KTP','Tanda tangan SPK tidak sesuai KTP / tidak sama','Foto serah terima tidak standar','Tanda tangan BAST kurang sesuai KTP','Pengambilan unit dengan surat kuasa','BAST belum ditandatangani / dicap lengkap','Dokumen pendukung tidak jelas / salah tulis','Pelunasan / DP belum selesai','SP Opsen / foto pemesan tidak sesuai prosedur','Isian harga / diskon / tipe di SPK perlu dikoreksi','Kelengkapan data SPK (coretan, stempel, KTP STNK)'];
 var UN='Perlu dikaji (belum terklasifikasi)',CT='Transfer tanpa KTP penyetor (BRI Link dkk.)';
 var RAW=toRaw(FULLD);
-var ui={top:'rekap',sub:{belum:0,clear:0,rincian:0,data:0},dst:'semua',months:{}};
+var ui={top:'rekap',sub:{belum:0,clear:0,rincian:0,data:0},dst:'semua',q:{rincian:'',data:'',belum:'',clear:''},months:{}};
 var F={cab:'',jenis:'',y:'',q:''},FULL=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
 var app=document.getElementById('app'),mf=document.getElementById('mf'),stEl=document.getElementById('st');
 function E(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
@@ -158,6 +176,11 @@ var f={di:di,t:r[0],m:parseInt(r[0].slice(3,5),10),y:parseInt(r[0].slice(6,10),1
 var clear=r[8]==='Fisik Faktur Arsip'&&r[9]==='BAST Asli'&&r[10]==='SPK Fisik Ada';
 f.st=clear?'Clear':'Belum Clear';out[clear?'clear':'belum'][di].push(f)})});out.semua=[0,1,2].map(function(di){return out.belum[di].concat(out.clear[di]).sort(function(a,b){return dk(a)-dk(b)||(a.fk<b.fk?-1:a.fk>b.fk?1:0)})});return out}
 var A,TYPES=[['belum','Belum Clear','Transaksi bermasalah yang dokumennya belum lengkap (Faktur, BAST, SPK belum seluruhnya “Fisik Faktur Arsip”, “BAST Asli”, “SPK Fisik Ada”).'],['clear','Clear','Transaksi bermasalah yang dokumen fisiknya sudah lengkap (Faktur = Fisik Faktur Arsip, BAST = BAST Asli, SPK = SPK Fisik Ada), dianggap clear.']];
+function tbar(k,tabs){return '<div class="tb">'+tabs+'<div class="qw"><input class="qs" type="search" data-q="'+k+'" placeholder="Cari di tab ini…" aria-label="Cari di tab ini" value="'+E(ui.q[k]||'')+'"><span class="cn sub"></span></div></div>'}
+function qsync(k){var sec=app.querySelector('section[data-top="'+k+'"]');if(!sec)return;var v=(ui.q[k]||'').toLowerCase(),inp=sec.querySelector('input.qs');if(inp&&inp.value!==(ui.q[k]||''))inp.value=ui.q[k]||'';
+sec.querySelectorAll('table').forEach(function(tb){var n=0;Array.prototype.forEach.call(tb.tBodies[0].rows,function(r){var show=!v||r.textContent.toLowerCase().indexOf(v)>-1;r.hidden=!show;if(show){n++;r.cells[0].textContent=n}})});
+var act=k==='data'?sec.querySelector('#dbox'):sec.querySelector(':scope>div[data-sub="'+ui.sub[k]+'"]');
+var cn=sec.querySelector('.cn');if(cn)cn.textContent=act?act.querySelectorAll('tbody tr:not([hidden])').length+' baris':''}
 function dk(f){return f.y*10000+f.m*100+parseInt(f.t.slice(0,2),10)}
 function hay(f){return [f.t,f.fk,f.n,f.mb,f.cb,f.s,f.v,f.sf,f.sb,f.ss,f.c.join(' ')].join(' ').toLowerCase()}
 function fl(k){return A[k].map(function(a,di){if(F.cab!==''&&+F.cab!==di)return [];return a.filter(function(f){
@@ -176,7 +199,7 @@ function tot(lb,v){return '<tr class="tot"><td></td><td>'+lb+'</td>'+v.map(funct
 function sm(fn){return L.map(function(a){return a.reduce(function(s,f){return s+(fn(f)||0)},0)})}
 h+=tot('Total temuan',tt)+tot('Jumlah transaksi bermasalah',L.map(function(a){return a.length}))+tot('Total nilai transaksi (Rp)',sm(function(f){return f.tot}))+tot('Nilai TT / SPK kecil di keterangan (Rp, dari teks)',sm(function(f){return f.c[6]}))+tot('Nilai transfer tanpa KTP di keterangan (Rp, dari teks)',sm(function(f){return f.c[9]}));
 return h+'</table></div><div class="dtl"></div>'}
-function divt(list){var h='<input class="q" placeholder="Cari customer, no faktur, sales, supervisor, keterangan…"><span class="cn sub">'+list.length+' baris</span><div class="sc tall"><table data-renum="1"><thead><tr>'+HD.map(function(x,j){return '<th class="'+(NUM[j]?'n':'')+' g'+(GR[j]||'')+'">'+x+'</th>'}).join('')+'</tr></thead><tbody>';
+function divt(list){var h='<div class="sc tall"><table data-renum="1"><thead><tr>'+HD.map(function(x,j){return '<th class="'+(NUM[j]?'n':'')+' g'+(GR[j]||'')+'">'+x+'</th>'}).join('')+'</tr></thead><tbody>';
 list.forEach(function(f,i){var c=f.c,r=[i+1,f.t,f.fk,f.n,f.mb,f.tot,f.cb,f.s,f.v,f.sf,f.sb,f.ss,c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7],c[8],c[9]];
 h+='<tr>'+r.map(function(v,j){return '<td class="'+(NUM[j]?'n':'')+'">'+(NUM[j]&&j>0?N(v):E(v))+'</td>'}).join('')+'</tr>'});
 return h+'</tbody></table></div>'}
@@ -184,12 +207,12 @@ var TT={belum:'Dokumen Belum Clear',clear:'Dokumen Clear'};
 function tab(k,t,c){return '<button type="button" role="tab" data-top="'+k+'"><span class="tl">'+t+'</span><span class="tc">'+c+'</span></button>'}
 var RH=['No','Cabang','Tgl Faktur','No Faktur','Nama Customer','Tipe Mobil','Total Transaksi (Rp)','Cara Beli','Sales','Supervisor','Status Faktur','Status BAST','Status SPK','Status Dokumen','Kategori SPK','Keterangan SPK','Kategori BAST','Keterangan BAST','Kategori TT','Keterangan TT','Nilai TT (Rp, dari teks)','Kategori Transfer','Keterangan Transfer','Nilai Transfer (Rp, dari teks)'];
 var RN={0:1,6:1,20:1,23:1},RG={14:'a',15:'a',16:'b',17:'b',18:'c',19:'c',20:'c',21:'d',22:'d',23:'d'},RW={4:'w1',8:'w1',14:'w3',16:'w3',18:'w3',21:'w3',15:'w2',17:'w2',19:'w2',22:'w2'};
-function rtab(list){var h='<input class="q" placeholder="Cari customer, no faktur, sales, supervisor, keterangan…"><span class="cn sub">'+list.length+' baris</span><div class="sc tall"><table class="rt" data-renum="1"><thead><tr>'+RH.map(function(x,j){return '<th class="'+(RN[j]?'n':'')+' g'+(RG[j]||'')+'">'+E(x)+'</th>'}).join('')+'</tr></thead><tbody>';
+function rtab(list){var h='<div class="sc tall"><table class="rt" data-renum="1"><thead><tr>'+RH.map(function(x,j){return '<th class="'+(RN[j]?'n':'')+' g'+(RG[j]||'')+'">'+E(x)+'</th>'}).join('')+'</tr></thead><tbody>';
 list.forEach(function(f,i){var c=f.c,r=[i+1,DIV[f.di],f.t,f.fk,f.n,f.mb,f.tot,f.cb,f.s,f.v,f.sf,f.sb,f.ss,f.st,c[0],c[1],c[2],c[3],c[4],c[5],c[6],c[7],c[8],c[9]];
 h+='<tr>'+r.map(function(v,j){var k=(RN[j]?'n ':'')+(RW[j]||'')+(j===13?(v==='Clear'?' sok':' sno'):'');return '<td class="'+k+'">'+(RN[j]&&j>0?N(v):E(v))+'</td>'}).join('')+'</tr>'});
 return h+'</tbody></table></div>'}
 function rincian(){var L=fl('semua'),all=[].concat(L[0],L[1],L[2]).sort(function(a,b){return dk(a)-dk(b)||(a.fk<b.fk?-1:a.fk>b.fk?1:0)}),P=[['Semua cabang',all],[DIV[0],L[0]],[DIV[1],L[1]],[DIV[2],L[2]]];
-return '<section data-top="rincian"><div class="sh2"><h2>Rincian Temuan</h2><span class="hint">klik header kolom untuk urutkan</span></div><p class="sub">'+N(all.length)+' transaksi bermasalah sesuai saringan. Satu baris per transaksi, lengkap dengan status dokumen serta keterangan SPK, BAST, TT, dan transfer.</p><div class="tabs sub2">'+P.map(function(x,i){return '<button data-sub="'+i+'" data-type="rincian">'+E(x[0])+' <i>'+x[1].length+'</i></button>'}).join('')+'</div>'+P.map(function(x,i){return '<div data-sub="'+i+'">'+rtab(x[1])+'</div>'}).join('')+'</section>'}
+return '<section data-top="rincian"><div class="sh2"><h2>Rincian Temuan</h2><span class="hint">klik header kolom untuk urutkan</span></div><p class="sub">'+N(all.length)+' transaksi bermasalah sesuai saringan. Satu baris per transaksi, lengkap dengan status dokumen serta keterangan SPK, BAST, TT, dan transfer.</p>'+tbar('rincian','<div class="tabs sub2">'+P.map(function(x,i){return '<button data-sub="'+i+'" data-type="rincian">'+E(x[0])+' <i>'+x[1].length+'</i></button>'}).join('')+'</div>')+P.map(function(x,i){return '<div data-sub="'+i+'">'+rtab(x[1])+'</div>'}).join('')+'</section>'}
 function render(){A=analyse();
 var ms={};['belum','clear'].forEach(function(k){A[k].forEach(function(a){a.forEach(function(f){ms[f.m]=1})})});
 FULLD.forEach(function(a){a.forEach(function(r){ms[+r[0].slice(3,5)]=1})});
@@ -200,12 +223,12 @@ TYPES.forEach(function(t){var L=fl(t[0]);cn[t[0]]=L.map(function(a){return a.len
 top+=tab(t[0],TT[t[0]],N(cn[t[0]][0]+cn[t[0]][1]+cn[t[0]][2])+' transaksi');
 secs+='<h3 class="sh3">'+TT[t[0]]+'</h3><p class="sub">'+t[2]+'</p>'+rekap(t[0])});
 secs+='</section>';
-TYPES.forEach(function(t){var L=fl(t[0]);secs+='<section data-top="'+t[0]+'"><div class="sh2"><h2>'+TT[t[0]]+'</h2><span class="hint">klik header kolom untuk urutkan</span></div><p class="sub">'+t[2]+'</p><div class="tabs sub2">'+DIV.map(function(d,i){return '<button data-sub="'+i+'" data-type="'+t[0]+'">'+d+' <i>'+L[i].length+'</i></button>'}).join('')+'</div>'+DIV.map(function(d,i){return '<div data-sub="'+i+'">'+divt(L[i])+'</div>'}).join('')+'</section>'});
-secs+=rincian()+dataSection();app.innerHTML=top+'</div>'+secs;apply();app.querySelectorAll('table').forEach(window._st);if(ui.top==='data')drawData();syncBar(ms)}
+TYPES.forEach(function(t){var L=fl(t[0]);secs+='<section data-top="'+t[0]+'"><div class="sh2"><h2>'+TT[t[0]]+'</h2><span class="hint">klik header kolom untuk urutkan</span></div><p class="sub">'+t[2]+'</p>'+tbar(t[0],'<div class="tabs sub2">'+DIV.map(function(d,i){return '<button data-sub="'+i+'" data-type="'+t[0]+'">'+d+' <i>'+L[i].length+'</i></button>'}).join('')+'</div>')+DIV.map(function(d,i){return '<div data-sub="'+i+'">'+divt(L[i])+'</div>'}).join('')+'</section>'});
+secs+=rincian()+dataSection();app.innerHTML=top+'</div>'+secs;apply();app.querySelectorAll('table').forEach(window._st);if(ui.top==='data')drawData();['rincian','belum','clear'].forEach(qsync);syncBar(ms)}
 function apply(){app.querySelectorAll('section[data-top]').forEach(function(s){var t=s.dataset.top;s.hidden=t!==ui.top;s.querySelectorAll(':scope>div[data-sub]').forEach(function(p){p.hidden=+p.dataset.sub!==ui.sub[t]})});
 app.querySelectorAll('.tabs button').forEach(function(b){b.classList.toggle('on',b.dataset.top?b.dataset.top===ui.top:(+b.dataset.sub===ui.sub[b.dataset.type]))})}
 app.addEventListener('click',function(e){var b=e.target.closest('.tabs button');
-if(b){if(b.dataset.top)ui.top=b.dataset.top;else ui.sub[b.dataset.type]=+b.dataset.sub;apply();if(ui.top==='data')drawData();return}
+if(b){if(b.dataset.top)ui.top=b.dataset.top;else ui.sub[b.dataset.type]=+b.dataset.sub;apply();if(ui.top==='data')drawData();if(ui.q[ui.top]!==undefined)qsync(ui.top);return}
 var tr=e.target.closest('table.rkt tr[data-cat]');if(!tr)return;var td=e.target.closest('td'),dv=td&&td.dataset.dv,tb=tr.closest('table'),k=tb.dataset.type,cat=tr.dataset.cat;
 if(td&&td.cellIndex>=2&&td.cellIndex<=4&&dv===undefined)return;
 var sel=dv===undefined?[0,1,2]:[+dv],L=fl(k),rows=[];
@@ -216,8 +239,7 @@ var h='<div class="dh"><b>Detail: '+E(cat)+' — '+(dv===undefined?'semua cabang
 rows.forEach(function(r,i){h+='<tr><td class="n">'+(i+1)+'</td>'+r.map(function(v,j){return '<td class="'+(j===8?'n':'')+'">'+E(v)+'</td>'}).join('')+'</tr>'});
 box.innerHTML=h+'</table></div>';window._st(box.querySelector('table'));box.scrollIntoView({behavior:'smooth',block:'nearest'})});
 app.addEventListener('click',function(e){if(e.target.classList.contains('cx'))e.target.closest('.dtl').innerHTML=''});
-app.addEventListener('input',function(e){var q=e.target.closest('.q');if(!q)return;var p=q.parentNode,v=q.value.toLowerCase(),n=0;
-p.querySelectorAll('tbody tr').forEach(function(t){var s=t.textContent.toLowerCase().indexOf(v)>-1;t.hidden=!s;if(s){n++;t.cells[0].textContent=n}});p.querySelector('.cn').textContent=n+' baris'});
+app.addEventListener('input',function(e){var q=e.target.closest('input.qs');if(!q)return;ui.q[q.dataset.q]=q.value.trim();qsync(q.dataset.q)});
 mf.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
 if(b.dataset.all!==undefined){Object.keys(ui.months).forEach(function(m){ui.months[m]=b.dataset.all==='1'})}else ui.months[b.dataset.m]=!ui.months[b.dataset.m];render()});
 function csv(t){var R=[],r=[],c='',q=false,i=0;for(;i<t.length;i++){var ch=t[i];if(q){if(ch==='"'){if(t[i+1]==='"'){c+='"';i++}else q=false}else c+=ch}else if(ch==='"')q=true;else if(ch===','){r.push(c);c='';}else if(ch==='\n'||ch==='\r'){if(ch==='\r'&&t[i+1]==='\n')i++;r.push(c);R.push(r);r=[];c=''}else c+=ch}
@@ -269,18 +291,18 @@ out.push({di:di,r:r,m:m,y:y,ok:r[16]==='Fisik Faktur Arsip'&&r[17]==='BAST Asli'
 function dcnt(){DF=fd();return DF.reduce(function(q,a){return q+a.length},0)}
 function dkey(g){return g.y*10000+g.m*100+parseInt(g.r[0].slice(0,2),10)}
 function dataSection(){var all=DF.reduce(function(q,a){return q+a.length},0),P=[['Semua cabang',all],[DIV[0],DF[0].length],[DIV[1],DF[1].length],[DIV[2],DF[2].length]];
-return '<section data-top="data"><div class="sh2"><h2>Seluruh Transaksi</h2><span class="hint">klik header kolom untuk urutkan</span></div><p class="sub">'+N(all)+' transaksi sesuai saringan, baik yang dokumennya sudah lengkap maupun belum. Lengkap berarti Faktur = Fisik Faktur Arsip, BAST = BAST Asli, dan SPK = SPK Fisik Ada.</p><div class="tabs sub2">'+P.map(function(x,i){return '<button data-sub="'+i+'" data-type="data">'+E(x[0])+' <i>'+x[1]+'</i></button>'}).join('')+'</div><div class="chips" id="dchips"></div><div id="dbox"></div></section>'}
+return '<section data-top="data"><div class="sh2"><h2>Seluruh Transaksi</h2><span class="hint">klik header kolom untuk urutkan</span></div><p class="sub">'+N(all)+' transaksi sesuai saringan, baik yang dokumennya sudah lengkap maupun belum. Lengkap berarti Faktur = Fisik Faktur Arsip, BAST = BAST Asli, dan SPK = SPK Fisik Ada.</p>'+tbar('data','<div class="tabs sub2">'+P.map(function(x,i){return '<button data-sub="'+i+'" data-type="data">'+E(x[0])+' <i>'+x[1]+'</i></button>'}).join('')+'</div>')+'<div class="chips" id="dchips"></div><div id="dbox"></div></section>'}
 function drawData(){var box=document.getElementById('dbox');if(!box)return;var idx=ui.sub.data;
 var base=idx===0?[].concat(DF[0],DF[1],DF[2]).sort(function(a,b){return dkey(a)-dkey(b)||(a.r[1]<b.r[1]?-1:a.r[1]>b.r[1]?1:0)}):DF[idx-1];
 var nl=base.filter(function(g){return g.ok}).length,nb=base.length-nl;
 var list=ui.dst==='lengkap'?base.filter(function(g){return g.ok}):ui.dst==='belum'?base.filter(function(g){return !g.ok}):base;
 document.getElementById('dchips').innerHTML=[['semua','Semua',base.length],['lengkap','Lengkap',nl],['belum','Belum lengkap',nb]].map(function(x){return '<button type="button" data-dst="'+x[0]+'" class="'+(ui.dst===x[0]?'on':'')+'">'+x[1]+' <i>'+x[2]+'</i></button>'}).join('');
-var h='<input class="q" placeholder="Cari customer, faktur, chassis, sales…"><span class="cn sub">'+list.length+' baris</span><div class="sc tall"><table class="rt" data-renum="1"><thead><tr>'+DH.map(function(x,j){return '<th class="'+(DNUM[j]?'n':'')+'">'+E(x)+'</th>'}).join('')+'</tr></thead><tbody>';
+var h='<div class="sc tall"><table class="rt" data-renum="1"><thead><tr>'+DH.map(function(x,j){return '<th class="'+(DNUM[j]?'n':'')+'">'+E(x)+'</th>'}).join('')+'</tr></thead><tbody>';
 list.forEach(function(g,i){var r=g.r,miss=[];if(r[16]!=='Fisik Faktur Arsip')miss.push('Faktur');if(r[17]!=='BAST Asli')miss.push('BAST');if(r[18]!=='SPK Fisik Ada')miss.push(r[18]==='SPK Fisik Hilang'?'SPK (hilang)':'SPK');
 var kom=/^\d+$/.test(r[19])?N(+r[19]):r[19],pph=/^\d+$/.test(r[12])?N(+r[12]):r[12];
 var v=[i+1,DIV[g.di],r[0],r[1],r[2],r[3],r[4],r[5],r[6],r[7],r[8],r[9],r[10],r[11],pph,r[13],r[14],r[15],r[16],r[17],r[18],g.ok?'Lengkap':'Belum lengkap',miss.join(', '),kom,r[20],r[21],r[22],r[23],g.f?'Ya':''];
 h+='<tr>'+v.map(function(x,j){var k=(DNUM[j]?'n ':'')+(DW[j]||'')+(j===21?(g.ok?' sok':' sno'):'');return '<td class="'+k+'">'+(DNUM[j]&&j>0?N(x):E(x))+'</td>'}).join('')+'</tr>'});
-box.innerHTML=h+'</tbody></table></div>';window._st(box.querySelector('table'))}
+box.innerHTML=h+'</tbody></table></div>';window._st(box.querySelector('table'));qsync('data')}
 app.addEventListener('click',function(e){var c=e.target.closest('.chips button');if(!c)return;ui.dst=c.dataset.dst;drawData()});
 function syncBar(ms){
 var ff=document.getElementById('ff'),fm=document.getElementById('fm'),seen={};
@@ -302,8 +324,7 @@ document.getElementById('ff').addEventListener('change',function(e){F.jenis=e.ta
 document.addEventListener('click',function(e){if(e.target.id==='goR'){e.preventDefault();ui.top='rincian';apply();app.scrollIntoView({behavior:'smooth',block:'start'})}});
 document.getElementById('fy').addEventListener('change',function(e){F.y=e.target.value;render()});
 document.getElementById('fm').addEventListener('change',function(e){var v=e.target.value;if(v==='x')return;Object.keys(ui.months).forEach(function(m){ui.months[m]=(v===''||m===v)});render()});
-var qt=null;document.getElementById('fq').addEventListener('input',function(e){var v=e.target.value.trim().toLowerCase();clearTimeout(qt);qt=setTimeout(function(){F.q=v;render()},200)});
-document.getElementById('fr').addEventListener('click',function(){F.cab='';F.jenis='';F.y='';F.q='';ui.sub.belum=0;ui.sub.clear=0;ui.sub.rincian=0;ui.sub.data=0;document.getElementById('fq').value='';Object.keys(ui.months).forEach(function(m){ui.months[m]=true});render()});
+document.getElementById('fr').addEventListener('click',function(){F.cab='';F.jenis='';F.y='';F.q='';ui.sub.belum=0;ui.sub.clear=0;ui.sub.rincian=0;ui.sub.data=0;ui.dst='semua';ui.q={rincian:'',data:'',belum:'',clear:''};Object.keys(ui.months).forEach(function(m){ui.months[m]=true});render()});
 render();setSt('init');live();
 })();</script>
 </body></html>
