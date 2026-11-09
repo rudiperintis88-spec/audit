@@ -168,7 +168,35 @@ body.locked{overflow:hidden}
 .hd .sy{flex-wrap:nowrap}
 @media(max-width:900px){.hd .sy{flex-wrap:wrap}}
 @media(max-width:700px){.srch2{flex-basis:100%;max-width:none}.tl2 select{flex:1 1 calc(50% - 8px);min-width:0;width:calc(50% - 8px);max-width:none}.tl2 select[data-f="jenis"]{flex-basis:100%;width:100%}}
-</style></head><body class="locked"><div id="gate" role="dialog" aria-modal="true" aria-labelledby="gt"><form id="gf" autocomplete="off" novalidate><h1 id="gt">Audit Unit</h1><input id="gname" type="text" placeholder="Nama" aria-label="Nama" autocomplete="name" style="text-align:left;padding:0 18px;margin-bottom:10px"><div class="gw"><input id="gpw" type="password" aria-label="Kata sandi" autocomplete="off" autocapitalize="off" spellcheck="false"><button type="button" id="gshow" aria-label="Tampilkan kata sandi" title="Tampilkan kata sandi" aria-pressed="false"><svg class="eo" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="ec" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.5 6.6C3.7 8.4 2 12 2 12s3.6 7 10 7c1.7 0 3.2-.4 4.5-1.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M3 3l18 18"/></svg></button></div><div id="ger" role="alert" aria-live="polite"></div><button type="submit" id="gbtn">Masuk</button></form></div><main id="shell" hidden><header class="hd"><div><h1>Hasil Audit Penjualan Showroom</h1><div class="pr" id="pr">Periode : Januari – September 2026</div></div><div class="hr"><div class="sy"><button type="button" id="lv" class="live" aria-pressed="true" title="Klik untuk menyalakan atau mematikan sinkron otomatis"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="st">Data awal · belum disinkron</span></button><button type="button" id="rf" class="rfb"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Refresh</button></div><div class="sr" id="sr">Sumber: Laporan Audit SPK DO</div><div class="sh" id="sh" hidden></div></div></header><div class="mod"><span class="mc">per cabang · per kategori · per dokumen</span></div><div id="app"></div></main><script>(function(){
+
+/* tampilan login seperti contoh */
+#gate{background:var(--card);background-image:none}
+#gf{width:min(440px,100%);background:none;border:0;box-shadow:none;padding:0;border-radius:0}
+#gf h1{margin:0 0 28px}
+#gf input{display:block;width:100%;height:54px;box-sizing:border-box;font:inherit;font-size:1.12rem;text-align:center;padding:0 56px;margin:0;border:1px solid #e2e2e2;border-radius:16px;background:#fff;color:#222}
+#gf input::placeholder{color:#6d6d6d;opacity:1}
+#gf #gname{margin-bottom:16px}
+#gf .gw{margin-bottom:16px}
+#gshow{right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;color:#5a5a5a}
+#gshow svg{width:28px;height:28px}
+#gshow[aria-pressed="true"]{color:#2a47d6}
+#ger{min-height:0;margin:0 0 14px;text-align:center}
+#ger:empty{display:none}
+#gf #gbtn{display:block;width:100%;height:54px;border:0;border-radius:16px;background:#2a47d6!important;color:#fff!important;font:inherit;font-size:1.12rem;font-weight:700;cursor:pointer}
+#gf #gbtn:disabled{opacity:.65}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) #gf input{background:#fff;color:#222}}
+
+/* login diperkecil */
+#gf{width:min(320px,100%)}
+#gf h1{font-size:1.5rem;margin:0 0 20px}
+#gf input{height:44px;font-size:.98rem;padding:0 44px;border-radius:12px}
+#gf #gname{margin-bottom:12px}
+#gf .gw{margin-bottom:12px}
+#gshow{right:6px;width:32px;height:32px}
+#gshow svg{width:21px;height:21px}
+#ger{font-size:.85rem;margin:0 0 12px}
+#gf #gbtn{height:44px;font-size:.98rem;border-radius:12px}
+</style></head><body class="locked"><div id="gate" role="dialog" aria-modal="true" aria-labelledby="gt"><form id="gf" autocomplete="off" novalidate><h1 id="gt">Audit Unit</h1><input id="gname" type="text" placeholder="Nama" aria-label="Nama" autocomplete="name"><div class="gw"><input id="gpw" type="password" placeholder="Masukkan password" aria-label="Password" autocomplete="off" autocapitalize="off" spellcheck="false"><button type="button" id="gshow" aria-label="Tampilkan kata sandi" title="Tampilkan kata sandi" aria-pressed="false"><svg class="eo" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="ec" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.5 6.6C3.7 8.4 2 12 2 12s3.6 7 10 7c1.7 0 3.2-.4 4.5-1.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M3 3l18 18"/></svg></button></div><div id="ger" role="alert" aria-live="polite"></div><button type="submit" id="gbtn">Masuk</button></form></div><main id="shell" hidden><header class="hd"><div><h1>Hasil Audit Penjualan Showroom</h1><div class="pr" id="pr">Periode : Januari – September 2026</div></div><div class="hr"><div class="sy"><button type="button" id="lv" class="live" aria-pressed="true" title="Klik untuk menyalakan atau mematikan sinkron otomatis"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="st">Data awal · belum disinkron</span></button><button type="button" id="rf" class="rfb"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Refresh</button></div><div class="sr" id="sr">Sumber: Laporan Audit SPK DO</div><div class="sh" id="sh" hidden></div></div></header><div class="mod"><span class="mc">per cabang · per kategori · per dokumen</span></div><div id="app"></div></main><script>(function(){
 function key(t){t=t.trim();if(!t)return null;var m=t.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);if(m)return +(m[3]+m[2]+m[1]);
 if(/^-?\d{1,3}(\.\d{3})+(,\d+)?%?$/.test(t))return parseFloat(t.replace(/\./g,'').replace(',','.'));
 if(/^-?\d+(,\d+)?%?$/.test(t))return parseFloat(t.replace(',','.'));if(/^-?\d+\.\d+%?$/.test(t))return parseFloat(t);return t.toLowerCase()}
@@ -425,15 +453,94 @@ function pdfHtml(k,tables,auto){var d=new Date(),title='Hasil Audit Penjualan Sh
 return '<!doctype html><html lang="id"><head><meta charset="utf-8"><title>'+E(fileName(k))+'</title><style>@page{size:A4 landscape;margin:10mm;@bottom-right{content:counter(page) " / " counter(pages);font:8px Arial}}*{box-sizing:border-box}body{font:9px/1.35 Arial,Helvetica,sans-serif;color:#111;margin:0}h1{font-size:15px;margin:0 0 2px}h2{font-size:12px;margin:14px 0 4px}.meta{color:#555;margin:0 0 8px;font-size:9px}table{border-collapse:collapse;width:100%}th{background:#1f3a5f;color:#fff;text-align:left;padding:3px 4px;font-size:8px;-webkit-print-color-adjust:exact;print-color-adjust:exact}td{border-bottom:.5px solid #bbb;padding:2px 4px;vertical-align:top;overflow-wrap:anywhere}td.n{text-align:right;white-space:nowrap}td.nw{white-space:nowrap}tr.tot td{font-weight:700;background:#eef2f7;-webkit-print-color-adjust:exact;print-color-adjust:exact}th.n{text-align:right}thead{display:table-header-group}tr{page-break-inside:avoid}</style></head><body><h1>'+E(title)+'</h1><p class="meta">'+E(sumText(k,k==='rekap'?undefined:(tables[0]?tables[0].rows.length:0)))+' · Sumber: Laporan Audit SPK DO · Dicetak '+E(fdt(d))+'</p>'+tables.map(function(t){return (k==='rekap'?'<h2>'+E(t.title)+'</h2>':'')+pdfTable(t)}).join('')+(auto?'<script>window.onload=function(){setTimeout(function(){window.focus();window.print()},300)}<\/script>':'')+'</body></html>'}
 
 function fileName(k){var d=new Date();return 'Hasil_Audit_Penjualan_Showroom_'+slug(TABN[k])+'_'+slug(cabLbl(k))+'_'+d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())}
-function doExport(k,kind){ensure(k);var tabs=expTables(k);if(!tabs.length)return;
-if(kind==='xls'){saveBlob(xlsxBlob(tabs.map(function(t){return {title:t.title,head:t.head,rows:t.rows.map(function(r){return r.map(function(v,i){return cv(v,t.num[i])})})}})),fileName(k)+'.xlsx');return}
-var w=window.open('','_blank');
+
+/* ---------- PDF langsung (tanpa dialog cetak) ---------- */
+var HW=[278,278,355,556,556,889,667,191,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,278,278,584,584,584,556,1015,667,667,722,722,667,611,778,722,278,500,667,556,833,722,778,667,778,722,667,611,722,667,944,667,667,611,278,278,278,469,556,333,556,556,500,556,556,278,556,556,222,222,500,222,833,556,556,556,556,333,500,278,556,500,722,500,500,500,334,260,334,584],HBW=[278,333,474,556,556,889,722,238,333,333,389,584,278,333,278,278,556,556,556,556,556,556,556,556,556,556,333,333,584,584,584,611,975,722,722,722,722,667,611,778,722,278,556,722,611,833,722,778,667,778,722,667,611,722,667,944,667,667,611,333,278,333,584,556,333,556,611,556,611,556,333,611,611,278,278,556,278,889,611,611,611,611,389,556,333,611,556,778,556,556,500,389,280,389,584],WAM={8211:150,8212:151,8216:145,8217:146,8220:147,8221:148,8226:149,8230:133,8364:128};
+function wa(v){var s=String(v==null?'':v),o='';for(var i=0;i<s.length;i++){var c=s.charCodeAt(i);if(c<32)c=32;else if(c>126){if(WAM[c])c=WAM[c];else if(c<160||c>255)c=63}o+=String.fromCharCode(c)}return o}
+function cw(c,b){if(c>=32&&c<=126)return (b?HBW:HW)[c-32];if(c===150)return 556;if(c===151||c===133)return 1000;if(c===145||c===146)return b?278:222;if(c===147||c===148)return b?500:333;if(c===149)return 350;return 556}
+function tw(s,fs,b){var w=0;for(var i=0;i<s.length;i++)w+=cw(s.charCodeAt(i),b);return w*fs/1000}
+function pesc(s){return s.replace(/[\\()]/g,'\\$&')}
+function wrapPar(s,maxw,fs,b){var words=s.split(' ').filter(Boolean),lines=[],cur='';
+words.forEach(function(w){while(w.length>1&&tw(w,fs,b)>maxw){var k=1;while(k<w.length-1&&tw(w.slice(0,k+1),fs,b)<=maxw)k++;if(cur){lines.push(cur);cur=''}lines.push(w.slice(0,k));w=w.slice(k)}
+var t=cur?cur+' '+w:w;if(tw(t,fs,b)<=maxw+0.01)cur=t;else{if(cur)lines.push(cur);cur=w}});
+if(cur||!lines.length)lines.push(cur);return lines}
+function pdfModel(t){var head=t.head,hasSD=head.indexOf('Status Dokumen')>-1,items=[],notes=[];
+head.forEach(function(h,i){if(PDROP[h])return;if(hasSD&&/^Status (Faktur|BAST|SPK)$/.test(h))return;
+var m=h.match(/^Kategori (.+)$/);if(m){var j=head.indexOf('Keterangan '+m[1]);if(j>-1){notes.push({l:m[1],a:i,b:j});return}}
+var m2=h.match(/^Keterangan (.+)$/);if(m2){if(head.indexOf('Kategori '+m2[1])>-1)return;notes.push({l:m2[1],b:i});return}
+items.push({l:h,a:i,n:t.num[i],nw:!!t.num[i]||/^(No|Cabang|Tgl Faktur|No Faktur)$/.test(h)})});
+if(notes.length)items.push({l:'Temuan dan catatan',notes:notes});
+var rows=t.rows.map(function(r){var tot=head[0]==='No'&&r[0]==='';
+return {tot:tot,cells:items.map(function(c){if(c.notes){var ps=[];c.notes.forEach(function(n){var kat=n.a!==undefined?r[n.a]:'',ket=r[n.b];if(!kat&&!ket)return;
+if(kat){ps.push({s:wa(n.l+' – '+kat),b:true});if(ket)ps.push({s:wa(ket),b:false})}else ps.push({s:wa(n.l+': '+ket),b:false})});return ps.length?ps:[{s:'',b:false}]}
+return [{s:wa(r[c.a]),b:tot}]})}});
+return {cols:items,rows:rows}}
+function colWidths(m,fs,hfs,avail){var padX=3,cols=m.cols,fixed=0,flex=[],W=[];
+cols.forEach(function(c,j){var mw=0,lw=0;
+m.rows.forEach(function(r){r.cells[j].forEach(function(p){var w=tw(p.s,fs,p.b);if(w>mw)mw=w;if(!c.nw)p.s.split(' ').forEach(function(x){var q=tw(x,fs,p.b);if(q>lw)lw=q})})});
+var lab=wa(c.l),hw=tw(lab,hfs,true),hl=0;lab.split(' ').forEach(function(x){var q=tw(x,hfs,true);if(q>hl)hl=q});
+if(c.nw){W[j]=Math.max(mw,hw)+2*padX;fixed+=W[j]}else{c._nat=Math.min(Math.max(mw,hl),200)+2*padX;c._min=Math.min(Math.max(lw,hl),90)+2*padX+1;if(c._nat<c._min)c._nat=c._min;flex.push(j)}});
+var rem=avail-fixed,sMin=0,sNat=0;flex.forEach(function(j){sMin+=cols[j]._min;sNat+=cols[j]._nat});
+if(rem<sMin-0.01)return null;
+if(sNat<=rem){var ex=rem-sNat;flex.forEach(function(j){W[j]=cols[j]._nat+ex*cols[j]._nat/sNat})}
+else{var lo=0,hi=1;for(var it=0;it<40;it++){var r=(lo+hi)/2,f=0;flex.forEach(function(j){f+=Math.max(cols[j]._min,cols[j]._nat*r)});if(f>rem)hi=r;else lo=r}
+flex.forEach(function(j){W[j]=Math.max(cols[j]._min,cols[j]._nat*lo)});var tot=0;flex.forEach(function(j){tot+=W[j]});if(tot>rem+0.5){var k=rem/tot;flex.forEach(function(j){W[j]=Math.max(cols[j]._min*0.98,W[j]*k)})}}
+return W}
+function bin(s){var u=new Uint8Array(s.length);for(var i=0;i<s.length;i++)u[i]=s.charCodeAt(i)&255;return u}
+function deflateStr(s){var cs=new CompressionStream('deflate'),w=cs.writable.getWriter();w.write(bin(s));w.close();return new Response(cs.readable).arrayBuffer().then(function(b){return new Uint8Array(b)})}
+function buildPages(k,tables){var PW=841.89,PH=595.28,ML=28,MR=28,MT=30,MB=34,AW=PW-ML-MR,pages=[],cur,y,
+INK='0.07 0.07 0.07 rg',GRY='0.38 0.38 0.38 rg',WHT='1 1 1 rg',NAVY='0.122 0.227 0.373 rg',TOTBG='0.925 0.941 0.965 rg';
+function np(){cur=[];pages.push(cur);y=PH-MT}
+function txt(x,yy,s,fs,b,col){cur.push(col+' BT /F'+(b?2:1)+' '+fs+' Tf '+x.toFixed(2)+' '+yy.toFixed(2)+' Td ('+pesc(s)+') Tj ET')}
+function box(x,yy,w,h,col){cur.push(col+' '+x.toFixed(2)+' '+yy.toFixed(2)+' '+w.toFixed(2)+' '+h.toFixed(2)+' re f')}
+function para(s,fs,b,col,gap){wrapPar(wa(s),AW,fs,b).forEach(function(l){if(y-fs*1.3<MB)np();txt(ML,y-fs,l,fs,b,col);y-=fs*1.3});y-=gap}
+np();para('Hasil Audit Penjualan Showroom – '+TABN[k],13,true,INK,2);
+para(sumText(k,k==='rekap'?undefined:(tables[0]?tables[0].rows.length:0))+' · Sumber: Laporan Audit SPK DO · Dicetak '+fdt(new Date()),8,false,GRY,8);
+tables.forEach(function(t,ti){var m=pdfModel(t),fs=7,hfs=7.5,W=null,sizes=[7,6.5,6,5.5,5,4.6];
+for(var z=0;z<sizes.length&&!W;z++){fs=sizes[z];hfs=fs+0.5;W=colWidths(m,fs,hfs,AW)}
+if(!W){fs=4.6;hfs=5;W=colWidths(m,fs,hfs,AW*2);var sc=AW/W.reduce(function(a,b){return a+b},0);W=W.map(function(x){return x*sc})}
+var padX=3,padY=2.2,lh=fs*1.22,hlh=hfs*1.22,X=[],ax=ML;W.forEach(function(w){X.push(ax);ax+=w});
+var hl=m.cols.map(function(c,j){return wrapPar(wa(c.l),W[j]-2*padX,hfs,true)}),hh=Math.max.apply(null,hl.map(function(l){return l.length}))*hlh+2*padY+1;
+function header(){box(ML,y-hh,AW,hh,NAVY);m.cols.forEach(function(c,j){hl[j].forEach(function(l,i){var x=c.n?X[j]+W[j]-padX-tw(l,hfs,true):X[j]+padX;txt(x,y-padY-hfs*0.85-i*hlh,l,hfs,true,WHT)})});y-=hh}
+if(tables.length>1||ti>0){if(y-hh-30<MB)np();if(tables.length>1)para(t.title,10.5,true,INK,3)}
+if(y-hh-lh*2<MB)np();header();
+m.rows.forEach(function(r){var lines=r.cells.map(function(ps,j){var o=[];ps.forEach(function(p){wrapPar(p.s,W[j]-2*padX,fs,p.b).forEach(function(l){o.push([l,p.b])})});return o.slice(0,55)}),
+rh=Math.max.apply(null,lines.map(function(l){return Math.max(l.length,1)}))*lh+2*padY;
+if(y-rh<MB){np();header()}
+if(r.tot)box(ML,y-rh,AW,rh,TOTBG);
+lines.forEach(function(ls,j){ls.forEach(function(l,i){if(!l[0])return;var x=m.cols[j].n?X[j]+W[j]-padX-tw(l[0],fs,l[1]):X[j]+padX;txt(x,y-padY-fs*0.85-i*lh,l[0],fs,l[1],INK)})});
+cur.push('0.8 0.8 0.8 RG 0.4 w '+ML+' '+(y-rh).toFixed(2)+' m '+(ML+AW).toFixed(2)+' '+(y-rh).toFixed(2)+' l S');y-=rh});
+y-=14});
+var N=pages.length;pages.forEach(function(p,i){var s='Halaman '+(i+1)+' / '+N;p.push(GRY+' BT /F1 7 Tf '+(PW-MR-tw(s,7,false)).toFixed(2)+' 18 Td ('+s+') Tj ET')});
+return pages}
+function pdfBlob(k,tables){return new Promise(function(r){setTimeout(r,30)}).then(function(){
+var pages=buildPages(k,tables),useZ=typeof CompressionStream==='function';
+return Promise.all(pages.map(function(p){var c=p.join('\n');return useZ?deflateStr(c):Promise.resolve(bin(c))})).then(function(cs){
+var chunks=[],off=0,xr=[],n=pages.length;
+function add(x){var u=typeof x==='string'?bin(x):x;chunks.push(u);off+=u.length}
+function obj(i,b){xr[i]=off;add(i+' 0 obj\n'+b+'\nendobj\n')}
+add('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n');obj(1,'<< /Type /Catalog /Pages 2 0 R >>');
+var kids=[];for(var i=0;i<n;i++)kids.push((5+2*i)+' 0 R');
+obj(2,'<< /Type /Pages /Kids ['+kids.join(' ')+'] /Count '+n+' >>');
+obj(3,'<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>');
+obj(4,'<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>');
+for(i=0;i<n;i++){obj(5+2*i,'<< /Type /Page /Parent 2 0 R /MediaBox [0 0 841.89 595.28] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents '+(6+2*i)+' 0 R >>');
+xr[6+2*i]=off;add((6+2*i)+' 0 obj\n<< /Length '+cs[i].length+(useZ?' /Filter /FlateDecode':'')+' >>\nstream\n');add(cs[i]);add('\nendstream\nendobj\n')}
+var last=4+2*n+1;obj(last,'<< /Title ('+pesc(wa('Hasil Audit Penjualan Showroom – '+TABN[k]))+') /Producer (Audit Unit) >>');
+var sx=off;add('xref\n0 '+(last+1)+'\n0000000000 65535 f \n');for(i=1;i<=last;i++)add(('0000000000'+xr[i]).slice(-10)+' 00000 n \n');
+add('trailer\n<< /Size '+(last+1)+' /Root 1 0 R /Info '+last+' 0 R >>\nstartxref\n'+sx+'\n%%EOF\n');
+return new Blob(chunks,{type:'application/pdf'})})})}
+function printPdf(k,tabs){var w=window.open('','_blank');
 if(w){w.document.open();w.document.write(pdfHtml(k,tabs,true));w.document.close();return}
 var fr=document.createElement('iframe');fr.style.cssText='position:fixed;right:0;bottom:0;width:0;height:0;border:0';document.body.appendChild(fr);
 fr.contentDocument.open();fr.contentDocument.write(pdfHtml(k,tabs,false));fr.contentDocument.close();
 setTimeout(function(){fr.contentWindow.focus();fr.contentWindow.print();setTimeout(function(){fr.remove()},3000)},400)}
+function doExport(k,kind,btn){ensure(k);var tabs=expTables(k);if(!tabs.length)return;
+if(kind==='xls'){saveBlob(xlsxBlob(tabs.map(function(t){return {title:t.title,head:t.head,rows:t.rows.map(function(r){return r.map(function(v,i){return cv(v,t.num[i])})})}})),fileName(k)+'.xlsx');return}
+var old=btn?btn.textContent:'';if(btn){btn.disabled=true;btn.textContent='Membuat PDF…'}
+pdfBlob(k,tabs).then(function(bl){saveBlob(bl,fileName(k)+'.pdf')}).catch(function(){printPdf(k,tabs)}).then(function(){if(btn){btn.disabled=false;btn.textContent=old}})}
 app.addEventListener('click',function(e){var x=e.target.closest('button[data-x]');if(!x)return;var k=x.dataset.k;
-if(x.dataset.x==='reset'){TF[k]=dtf();redraw(k);return}doExport(k,x.dataset.x)});
+if(x.dataset.x==='reset'){TF[k]=dtf();redraw(k);return}doExport(k,x.dataset.x,x)});
 
 /* ---------- header, sinkron Google Sheets ---------- */
 function updHead(){var lo=999999,hi=0,tot=0;FULLD.forEach(function(a){tot+=a.length;a.forEach(function(r){var v=+r[0].slice(6,10)*100+ +r[0].slice(3,5);if(v<lo)lo=v;if(v>hi)hi=v})});
