@@ -179,10 +179,10 @@ body.locked{overflow:hidden}
 #gf .gw{margin-bottom:16px}
 #gshow{right:12px;top:50%;transform:translateY(-50%);width:40px;height:40px;color:#5a5a5a}
 #gshow svg{width:28px;height:28px}
-#gshow[aria-pressed="true"]{color:#2a47d6}
+#gshow[aria-pressed="true"]{color:var(--ac)}
 #ger{min-height:0;margin:0 0 14px;text-align:center}
 #ger:empty{display:none}
-#gf #gbtn{display:block;width:100%;height:54px;border:0;border-radius:16px;background:#2a47d6!important;color:#fff!important;font:inherit;font-size:1.12rem;font-weight:700;cursor:pointer}
+#gf #gbtn{display:block;width:100%;height:54px;border:0;border-radius:16px;background:var(--ac);color:#fff;font:inherit;font-size:1.12rem;font-weight:700;cursor:pointer}
 #gf #gbtn:disabled{opacity:.65}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]) #gf input{background:#fff;color:#222}}
 
@@ -196,6 +196,12 @@ body.locked{overflow:hidden}
 #gshow svg{width:21px;height:21px}
 #ger{font-size:.85rem;margin:0 0 12px}
 #gf #gbtn{height:44px;font-size:.98rem;border-radius:12px}
+
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) #gf #gbtn{color:#10161c}}
+
+/* halaman setelah login: putih polos */
+:root{--bg:#fff;--tint:transparent}
+.hd{background:none}
 </style></head><body class="locked"><div id="gate" role="dialog" aria-modal="true" aria-labelledby="gt"><form id="gf" autocomplete="off" novalidate><h1 id="gt">Audit Unit</h1><input id="gname" type="text" placeholder="Nama" aria-label="Nama" autocomplete="name"><div class="gw"><input id="gpw" type="password" placeholder="Masukkan password" aria-label="Password" autocomplete="off" autocapitalize="off" spellcheck="false"><button type="button" id="gshow" aria-label="Tampilkan kata sandi" title="Tampilkan kata sandi" aria-pressed="false"><svg class="eo" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="ec" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.6 5.1A10.4 10.4 0 0 1 12 5c6.4 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.1M6.5 6.6C3.7 8.4 2 12 2 12s3.6 7 10 7c1.7 0 3.2-.4 4.5-1.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="M3 3l18 18"/></svg></button></div><div id="ger" role="alert" aria-live="polite"></div><button type="submit" id="gbtn">Masuk</button></form></div><main id="shell" hidden><header class="hd"><div><h1>Hasil Audit Penjualan Showroom</h1><div class="pr" id="pr">Periode : Januari – September 2026</div></div><div class="hr"><div class="sy"><button type="button" id="lv" class="live" aria-pressed="true" title="Klik untuk menyalakan atau mematikan sinkron otomatis"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span id="st">Data awal · belum disinkron</span></button><button type="button" id="rf" class="rfb"><svg class="ic" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" rx="5" fill="#3b8eea"/><path d="M5.2 9.2A4.9 4.9 0 0 1 13.6 6.6M14.8 10.8A4.9 4.9 0 0 1 6.4 13.4" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><path d="M14.9 4.9v3h-3M5.1 15.1v-3h3" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Refresh</button></div><div class="sr" id="sr">Sumber: Laporan Audit SPK DO</div><div class="sh" id="sh" hidden></div></div></header><div class="mod"><span class="mc">per cabang · per kategori · per dokumen</span></div><div id="app"></div></main><script>(function(){
 function key(t){t=t.trim();if(!t)return null;var m=t.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);if(m)return +(m[3]+m[2]+m[1]);
 if(/^-?\d{1,3}(\.\d{3})+(,\d+)?%?$/.test(t))return parseFloat(t.replace(/\./g,'').replace(',','.'));
